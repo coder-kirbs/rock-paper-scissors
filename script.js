@@ -16,10 +16,12 @@ let computerSelection;
         console.log("scissors")
     }
 
-    if (computerSelection=="rock" && playerSelection=="rock") {
-        console.log("Tie")
-    } else if (computerSelection=="paper" && playerSelection=="rock") {
-        console.log("You lose")
+function playRound() {
+    if (computerSelection==="rock" && playerSelection==="rock") {
+       return ("Tie");
+    } else if (computerSelection==="paper" && playerSelection==="rock") {
+        return ("You lose");
     } else {
-        console.log("You win")
-    }
+        return ("You win");
+    }}
+console.log(playRound())
