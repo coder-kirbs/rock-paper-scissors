@@ -2,7 +2,7 @@
 
 let rps = ["Rock", "Paper", "Scissors"];
 let getComputerChoice = Math.floor(Math.random() * rps.length)+1;
-let playerSelection= "rock";
+let playerSelection= prompt("Rock, Paper, or Scissors?")
 let computerSelection;
 
     if (getComputerChoice===1) {
@@ -15,8 +15,31 @@ let computerSelection;
         computerSelection="scissors";
         console.log("scissors")
     }
+    
+    function playRound() {
+        if (computerSelection==="paper" && playerSelection==="rock") {
+            return ("You lose");
+        } else if (computerSelection==="rock" && playerSelection==="scissors") {
+            return ("You lose");
+        } else if (computerSelection==="scissors" && playerSelection==="paper") {
+            return ("You lose");
+        } else if (computerSelection==="paper" && playerSelection==="scissors") {
+            return ("You win");
+        } else if (computerSelection==="rock" && playerSelection==="paper") {
+            return ("You win");
+        } else if (computerSelection==="scissors" && playerSelection==="rock") {
+            return ("You win");
+        } else {
+            return ("Tie")
+        }}
+    console.log(playRound())
 
-function playRound() {
+
+
+
+
+
+/* function playRound() {
     if (computerSelection==="rock" && playerSelection==="rock") {
        return ("Tie");
     } else if (computerSelection==="paper" && playerSelection==="rock") {
@@ -24,4 +47,14 @@ function playRound() {
     } else {
         return ("You win");
     }}
-console.log(playRound())
+console.log(playRound()) */
+
+/* function game() {
+    if (computerSelection==="rock" && playerSelection==="rock") {
+        return ("Tie");
+     } else if (computerSelection==="paper" && playerSelection==="rock") {
+         return ("You lose");
+     } else {
+         return ("You win");
+     }
+} */
