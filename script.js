@@ -7,30 +7,30 @@ let computerSelection;
 
     if (getComputerChoice===1) {
         computerSelection="rock";
-        console.log("rock")
+        console.log("CPU chose rock.")
     } else if (getComputerChoice===2) {
         computerSelection="paper";
-        console.log("paper")
+        console.log("CPU chose paper.")
     } else {
         computerSelection="scissors";
-        console.log("scissors")
+        console.log("CPU chose scissors.")
     }
     
     function playRound() {
         if (computerSelection==="paper" && playerSelection==="rock") {
-            return ("You lose");
+            return ("You lose. Paper covers rock.");
         } else if (computerSelection==="rock" && playerSelection==="scissors") {
-            return ("You lose");
+            return ("You lose. Rock breaks scissors.");
         } else if (computerSelection==="scissors" && playerSelection==="paper") {
-            return ("You lose");
+            return ("You lose. Scissors cut paper.");
         } else if (computerSelection==="paper" && playerSelection==="scissors") {
-            return ("You win");
+            return ("You win! Scissors cut paper.");
         } else if (computerSelection==="rock" && playerSelection==="paper") {
-            return ("You win");
+            return ("You win! Paper covers rock.");
         } else if (computerSelection==="scissors" && playerSelection==="rock") {
-            return ("You win");
+            return ("You win! Rock breaks scissors.");
         } else {
-            return ("Tie")
+            return ("Tie!")
         }}
     console.log(playRound())
 
