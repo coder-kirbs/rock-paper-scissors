@@ -9,9 +9,9 @@ let computerScore=0;
 console.log(game())
 
 
-/***************functions below***************/
+// functions below //
 
-function game() {
+function game() { 
     console.log(playRound());
     console.log("You: "+playerScore);
     console.log("CPU: "+computerScore); 
