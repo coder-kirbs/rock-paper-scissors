@@ -9,13 +9,10 @@ let computerScore=0;
 
     if (getComputerChoice===1) {
         computerSelection="rock";
-        console.log("CPU chose rock.")
     } else if (getComputerChoice===2) {
         computerSelection="paper";
-        console.log("CPU chose paper.")
     } else {
         computerSelection="scissors";
-        console.log("CPU chose scissors.")
     }
     
 
@@ -27,24 +24,24 @@ function playRound() {
     let playerSelection= prompt("Rock, Paper, or Scissors?");
     if (computerSelection==="paper" && playerSelection.toLocaleLowerCase()==="rock") {
         ++computerScore;
-        return ("You lose. Paper covers rock.");
+        return ("CPU chose paper. You lose. Paper covers rock.");
     } else if (computerSelection==="rock" && playerSelection.toLocaleLowerCase()==="scissors") {
         ++computerScore;
-        return ("You lose. Rock breaks scissors.");
+        return ("CPU chose rock. You lose. Rock breaks scissors.");
     } else if (computerSelection==="scissors" && playerSelection.toLocaleLowerCase()==="paper") {
         ++computerScore;
-        return ("You lose. Scissors cut paper.");
+        return ("CPU chose scissors. You lose. Scissors cut paper.");
     } else if (computerSelection==="paper" && playerSelection.toLocaleLowerCase()==="scissors") {
         ++playerScore;
-        return ("You win! Scissors cut paper.");
+        return ("CPU chose paper. You win! Scissors cut paper.");
     } else if (computerSelection==="rock" && playerSelection.toLocaleLowerCase()==="paper") {
         ++playerScore;
-        return ("You win! Paper covers rock.");
+        return ("CPU chose rock. You win! Paper covers rock.");
     } else if (computerSelection==="scissors" && playerSelection.toLocaleLowerCase()==="rock") {
         ++playerScore;
-        return ("You win! Rock breaks scissors.");
+        return ("CPU chose scissors. You win! Rock breaks scissors.");
     } else {
-        return ("Tie!")
+        return ("You and the CPU chose the same. Tie!")
     }
 }
 console.log(playRound());
