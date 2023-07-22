@@ -1,8 +1,7 @@
 /* console.log("Hello, World!") */
 
 let rps = ["Rock", "Paper", "Scissors"];
-let getComputerChoice = Math.floor(Math.random() * rps.length)+1;
-
+let getComputerChoice;
 let computerSelection;
 let playerScore=0;
 let computerScore=0;
@@ -23,24 +22,17 @@ function game() {
     console.log(playRound());
     console.log("You: "+playerScore);
     console.log("CPU: "+computerScore); 
-}
-  
+} 
 
+function playRound() {
+    getComputerChoice = Math.floor(Math.random() * rps.length)+1;
     if (getComputerChoice===1) {
         computerSelection="rock";
     } else if (getComputerChoice===2) {
         computerSelection="paper";
     } else {
         computerSelection="scissors";
-    }
-    
-
-
-
-
-
-function playRound() {
-    let playerSelection= prompt("Rock, Paper, or Scissors?");
+    } let playerSelection= prompt("Rock, Paper, or Scissors?");
     if (computerSelection==="paper" && playerSelection.toLocaleLowerCase()==="rock") {
         ++computerScore;
         return ("CPU chose paper. You lose. Paper covers rock.");
@@ -64,24 +56,4 @@ function playRound() {
     }
 }
 
-
-
-/* function playRound() {
-    if (computerSelection==="rock" && playerSelection==="rock") {
-       return ("Tie");
-    } else if (computerSelection==="paper" && playerSelection==="rock") {
-        return ("You lose");
-    } else {
-        return ("You win");
-    }}
-console.log(playRound()) */
-
-/* function game() {
-    if (computerSelection==="rock" && playerSelection==="rock") {
-        return ("Tie");
-     } else if (computerSelection==="paper" && playerSelection==="rock") {
-         return ("You lose");
-     } else {
-         return ("You win");
-     }
-} */
+console.log(game())
