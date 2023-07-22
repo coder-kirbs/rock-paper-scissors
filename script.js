@@ -6,6 +6,11 @@ let computerSelection;
 let playerScore=0;
 let computerScore=0;
 
+console.log(game())
+
+
+/***************functions below***************/
+
 function game() {
     console.log(playRound());
     console.log("You: "+playerScore);
@@ -21,7 +26,8 @@ function game() {
     console.log("CPU: "+computerScore); 
     console.log(playRound());
     console.log("You: "+playerScore);
-    console.log("CPU: "+computerScore); 
+    console.log("CPU: "+computerScore);
+    console.log(checkWinner()) 
 } 
 
 function playRound() {
@@ -56,4 +62,10 @@ function playRound() {
     }
 }
 
-console.log(game())
+function checkWinner() {
+    if (computerScore > playerScore) {
+        return ("Game over! You lose!")
+    } else {
+        return ("Game over! You win!")
+    }
+}
