@@ -7,6 +7,25 @@ let computerSelection;
 let playerScore=0;
 let computerScore=0;
 
+function game() {
+    console.log(playRound());
+    console.log("You: "+playerScore);
+    console.log("CPU: "+computerScore); 
+    console.log(playRound());
+    console.log("You: "+playerScore);
+    console.log("CPU: "+computerScore); 
+    console.log(playRound());
+    console.log("You: "+playerScore);
+    console.log("CPU: "+computerScore); 
+    console.log(playRound());
+    console.log("You: "+playerScore);
+    console.log("CPU: "+computerScore); 
+    console.log(playRound());
+    console.log("You: "+playerScore);
+    console.log("CPU: "+computerScore); 
+}
+  
+
     if (getComputerChoice===1) {
         computerSelection="rock";
     } else if (getComputerChoice===2) {
@@ -44,14 +63,6 @@ function playRound() {
         return ("You and the CPU chose the same. Tie!")
     }
 }
-console.log(playRound());
-console.log("You: "+playerScore);
-console.log("CPU: "+computerScore);
-
-function game() {
-    playRound();
-}
-
 
 
 
