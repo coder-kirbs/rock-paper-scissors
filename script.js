@@ -71,6 +71,14 @@ function checkWinner() {
 }
 
 const rockBtn = document.querySelector('#rock');
-rockBtn.addEventListener('click', function (e) {
-    console.log(e);
-  });
+rockBtn.addEventListener('click', function(e) {
+    console.log('rock');
+});
+const paperBtn = document.querySelector('#paper');
+paperBtn.addEventListener('click', function(e) {
+    console.log('paper');
+});
+const scissorsBtn = document.querySelector('#scissors');
+scissorsBtn.addEventListener('click', function(e) {
+    console.log('scissors');
+});
