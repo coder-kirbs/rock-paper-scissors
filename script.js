@@ -6,7 +6,7 @@ let computerSelection;
 let playerScore=0;
 let computerScore=0;
 
-console.log(game())
+// console.log(game())
 
 
 // functions below //
@@ -69,3 +69,8 @@ function checkWinner() {
         return ("Game over! You win!")
     }
 }
+
+const rockBtn = document.querySelector('#rock');
+rockBtn.addEventListener('click', function (e) {
+    console.log(e);
+  });
