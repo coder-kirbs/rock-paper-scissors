@@ -11,7 +11,7 @@ console.log(game())
 
 // functions below //
 
-function game() { 
+/* function game() { 
     console.log(playRound());
     console.log("You: "+playerScore);
     console.log("CPU: "+computerScore); 
@@ -28,7 +28,7 @@ function game() {
     console.log("You: "+playerScore);
     console.log("CPU: "+computerScore);
     console.log(checkWinner()) 
-} 
+} */
 
 function playRound() {
     getComputerChoice = Math.floor(Math.random() * rps.length)+1;
