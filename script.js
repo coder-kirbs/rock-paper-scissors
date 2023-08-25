@@ -3,6 +3,7 @@
 let rps = ["Rock", "Paper", "Scissors"];
 let getComputerChoice;
 let computerSelection;
+let playerSelection;
 let playerScore=0;
 let computerScore=0;
 
@@ -30,6 +31,19 @@ function game() {
     console.log(checkWinner()) 
 }
 
+const rockBtn = document.querySelector('#rock');
+rockBtn.addEventListener('click', function(e) {
+    playerSelection = "rock";
+});
+const paperBtn = document.querySelector('#paper');
+paperBtn.addEventListener('click', function(e) {
+    playerSelection = "paper";
+});
+const scissorsBtn = document.querySelector('#scissors');
+scissorsBtn.addEventListener('click', function(e) {
+    playerSelection = "scissors";
+});
+
 function playRound() {
     getComputerChoice = Math.floor(Math.random() * rps.length)+1;
     if (getComputerChoice===1) {
@@ -38,31 +52,8 @@ function playRound() {
         computerSelection="paper";
     } else {
         computerSelection="scissors";
-
-    } /*let playerSelection= alert("Rock, Paper, or Scissors?");
-        if (computerSelection==="paper" && playerSelection.toLocaleLowerCase()==="rock") {
-            ++computerScore;
-            return ("CPU chose paper. You lose. Paper covers rock.");
-        } else if (computerSelection==="rock" && playerSelection.toLocaleLowerCase()==="scissors") {
-            ++computerScore;
-            return ("CPU chose rock. You lose. Rock breaks scissors.");
-        } else if (computerSelection==="scissors" && playerSelection.toLocaleLowerCase()==="paper") {
-            ++computerScore;
-            return ("CPU chose scissors. You lose. Scissors cut paper.");
-        } else if (computerSelection==="paper" && playerSelection.toLocaleLowerCase()==="scissors") {
-            ++playerScore;
-            return ("CPU chose paper. You win! Scissors cut paper.");
-        } else if (computerSelection==="rock" && playerSelection.toLocaleLowerCase()==="paper") {
-            ++playerScore;
-            return ("CPU chose rock. You win! Paper covers rock.");
-        } else if (computerSelection==="scissors" && playerSelection.toLocaleLowerCase()==="rock") {
-            ++playerScore;
-            return ("CPU chose scissors. You win! Rock breaks scissors.");
-        } else {
-            return ("You and the CPU chose the same. Tie!")
-        }*/
-
-        let playerSelection= alert("Rock, Paper, or Scissors?");
+        
+        let playerSelection;
         if (computerSelection==="paper" && playerSelection.toLocaleLowerCase()==="rock") {
             ++computerScore;
             return ("CPU chose paper. You lose. Paper covers rock.");
@@ -84,8 +75,30 @@ function playRound() {
         } else {
             return ("You and the CPU chose the same. Tie!")
         }
-}
+}}
 
+/*let playerSelection= alert("Rock, Paper, or Scissors?");
+if (computerSelection==="paper" && playerSelection.toLocaleLowerCase()==="rock") {
+    ++computerScore;
+    return ("CPU chose paper. You lose. Paper covers rock.");
+} else if (computerSelection==="rock" && playerSelection.toLocaleLowerCase()==="scissors") {
+    ++computerScore;
+    return ("CPU chose rock. You lose. Rock breaks scissors.");
+} else if (computerSelection==="scissors" && playerSelection.toLocaleLowerCase()==="paper") {
+    ++computerScore;
+    return ("CPU chose scissors. You lose. Scissors cut paper.");
+} else if (computerSelection==="paper" && playerSelection.toLocaleLowerCase()==="scissors") {
+    ++playerScore;
+    return ("CPU chose paper. You win! Scissors cut paper.");
+} else if (computerSelection==="rock" && playerSelection.toLocaleLowerCase()==="paper") {
+    ++playerScore;
+    return ("CPU chose rock. You win! Paper covers rock.");
+} else if (computerSelection==="scissors" && playerSelection.toLocaleLowerCase()==="rock") {
+    ++playerScore;
+    return ("CPU chose scissors. You win! Rock breaks scissors.");
+} else {
+    return ("You and the CPU chose the same. Tie!")
+}*/
 
 
 function checkWinner() {
@@ -96,15 +109,3 @@ function checkWinner() {
     }
 }
 
-const rockBtn = document.querySelector('#rock');
-rockBtn.addEventListener('click', function(e) {
-    console.log('rock');
-});
-const paperBtn = document.querySelector('#paper');
-paperBtn.addEventListener('click', function(e) {
-    console.log('paper');
-});
-const scissorsBtn = document.querySelector('#scissors');
-scissorsBtn.addEventListener('click', function(e) {
-    console.log('scissors');
-});
