@@ -31,17 +31,24 @@ function game() {
     console.log(checkWinner()) 
 }
 
+function test() {
+    console.log("this is a thing")
+}
+
 const rockBtn = document.querySelector('#rock');
-rockBtn.addEventListener('click', function(e) {
-    playerSelection = "rock";
+rockBtn.addEventListener('click', function(e){
+    playRound();
 });
+ 
 const paperBtn = document.querySelector('#paper');
 paperBtn.addEventListener('click', function(e) {
     playerSelection = "paper";
+    console.log('player:'+playerSelection);
 });
 const scissorsBtn = document.querySelector('#scissors');
 scissorsBtn.addEventListener('click', function(e) {
     playerSelection = "scissors";
+    console.log('player:'+playerSelection);
 });
 
 function playRound() {
@@ -53,23 +60,22 @@ function playRound() {
     } else {
         computerSelection="scissors";
         
-        let playerSelection;
-        if (computerSelection==="paper" && playerSelection.toLocaleLowerCase()==="rock") {
+        if (computerSelection==="paper" && playerSelection==="rock") {
             ++computerScore;
             return ("CPU chose paper. You lose. Paper covers rock.");
-        } else if (computerSelection==="rock" && playerSelection.toLocaleLowerCase()==="scissors") {
+        } else if (computerSelection==="rock" && playerSelection==="scissors") {
             ++computerScore;
             return ("CPU chose rock. You lose. Rock breaks scissors.");
-        } else if (computerSelection==="scissors" && playerSelection.toLocaleLowerCase()==="paper") {
+        } else if (computerSelection==="scissors" && playerSelection==="paper") {
             ++computerScore;
             return ("CPU chose scissors. You lose. Scissors cut paper.");
-        } else if (computerSelection==="paper" && playerSelection.toLocaleLowerCase()==="scissors") {
+        } else if (computerSelection==="paper" && playerSelection==="scissors") {
             ++playerScore;
             return ("CPU chose paper. You win! Scissors cut paper.");
-        } else if (computerSelection==="rock" && playerSelection.toLocaleLowerCase()==="paper") {
+        } else if (computerSelection==="rock" && playerSelection==="paper") {
             ++playerScore;
             return ("CPU chose rock. You win! Paper covers rock.");
-        } else if (computerSelection==="scissors" && playerSelection.toLocaleLowerCase()==="rock") {
+        } else if (computerSelection==="scissors" && playerSelection==="rock") {
             ++playerScore;
             return ("CPU chose scissors. You win! Rock breaks scissors.");
         } else {
@@ -78,22 +84,22 @@ function playRound() {
 }}
 
 /*let playerSelection= alert("Rock, Paper, or Scissors?");
-if (computerSelection==="paper" && playerSelection.toLocaleLowerCase()==="rock") {
+if (computerSelection==="paper" && playerSelection==="rock") {
     ++computerScore;
     return ("CPU chose paper. You lose. Paper covers rock.");
-} else if (computerSelection==="rock" && playerSelection.toLocaleLowerCase()==="scissors") {
+} else if (computerSelection==="rock" && playerSelection==="scissors") {
     ++computerScore;
     return ("CPU chose rock. You lose. Rock breaks scissors.");
-} else if (computerSelection==="scissors" && playerSelection.toLocaleLowerCase()==="paper") {
+} else if (computerSelection==="scissors" && playerSelection==="paper") {
     ++computerScore;
     return ("CPU chose scissors. You lose. Scissors cut paper.");
-} else if (computerSelection==="paper" && playerSelection.toLocaleLowerCase()==="scissors") {
+} else if (computerSelection==="paper" && playerSelection==="scissors") {
     ++playerScore;
     return ("CPU chose paper. You win! Scissors cut paper.");
-} else if (computerSelection==="rock" && playerSelection.toLocaleLowerCase()==="paper") {
+} else if (computerSelection==="rock" && playerSelection==="paper") {
     ++playerScore;
     return ("CPU chose rock. You win! Paper covers rock.");
-} else if (computerSelection==="scissors" && playerSelection.toLocaleLowerCase()==="rock") {
+} else if (computerSelection==="scissors" && playerSelection==="rock") {
     ++playerScore;
     return ("CPU chose scissors. You win! Rock breaks scissors.");
 } else {
@@ -109,3 +115,9 @@ function checkWinner() {
     }
 }
 
+/* 
+Player picks a choice (clicks a button)
+Button signals to begin playRound
+
+Computer tells whether they have won the round or not 
+*/
