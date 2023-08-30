@@ -31,6 +31,10 @@ function game() {
     console.log(checkWinner()) 
 }
 
+function fiveRounds() {
+    
+};
+
 const rockBtn = document.querySelector('#rock');
 rockBtn.addEventListener('click', function(e){
     playerSelection = "rock";
@@ -87,6 +91,8 @@ function playRound() {
     } else {
         console.log ("You and the CPU chose the same. Tie!")
     }
+    console.log("You:"+" "+playerScore)
+    console.log("Computer:"+" "+computerScore)
 };
 
 /*let playerSelection= alert("Rock, Paper, or Scissors?");
