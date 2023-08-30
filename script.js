@@ -93,6 +93,7 @@ function playRound() {
     }
     console.log("You:"+" "+playerScore)
     console.log("Computer:"+" "+computerScore)
+    checkWinner();
 };
 
 /*let playerSelection= alert("Rock, Paper, or Scissors?");
@@ -119,12 +120,21 @@ if (computerSelection==="paper" && playerSelection==="rock") {
 }*/
 
 
-function checkWinner() {
+/*function checkWinner() {
     if (computerScore > playerScore) {
         return ("Game over! You lose!")
     } else {
         return ("Game over! You win!")
     }
+}*/
+
+function checkWinner() {
+    if (computerScore===5) {
+        console.log ("Game over! You lose!")
+    } else if (playerScore===5) {
+        console.log ("Game over! You win!")
+    } else 
+        return 
 }
 
 /* 
