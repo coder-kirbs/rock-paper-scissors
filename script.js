@@ -58,6 +58,20 @@ scissorsBtn.addEventListener('click', function(e) {
     playRound();
 });
 
+const resultsDiv = document.createElement('h3');
+
+
+const yourScoreDOM = document.createElement('p');
+const yourScorePara = document.querySelector('#yourScorePara');
+yourScoreDOM.textContent = playerScore;
+yourScorePara.append(yourScoreDOM);
+
+const compScoreDOM = document.createElement('p');
+const compScorePara = document.querySelector('#compScorePara')
+compScoreDOM.textContent = computerScore
+compScorePara.append(compScoreDOM);
+
+
 function choices() {
     getComputerChoice = Math.floor(Math.random() * rps.length)+1;
     if (getComputerChoice===1) {
@@ -72,24 +86,24 @@ function choices() {
 function playRound() { 
     if (computerSelection==="paper" && playerSelection==="rock") {
         ++computerScore;
-        console.log ("CPU chose paper. You lose. Paper covers rock.");
+        resultsDiv.textContent = "CPU chose paper. You lose. Paper covers rock.";
     } else if (computerSelection==="rock" && playerSelection==="scissors") {
         ++computerScore;
-        console.log ("CPU chose rock. You lose. Rock breaks scissors.");
+        resultsDiv.textContent = "CPU chose rock. You lose. Rock breaks scissors.";
     } else if (computerSelection==="scissors" && playerSelection==="paper") {
         ++computerScore;
-        console.log ("CPU chose scissors. You lose. Scissors cut paper.");
+        resultsDiv.textContent = "CPU chose scissors. You lose. Scissors cut paper.";
     } else if (computerSelection==="paper" && playerSelection==="scissors") {
         ++playerScore;
-        console.log ("CPU chose paper. You win! Scissors cut paper.");
+        resultsDiv.textContent = "CPU chose paper. You win! Scissors cut paper.";
     } else if (computerSelection==="rock" && playerSelection==="paper") {
         ++playerScore;
-        console.log ("CPU chose rock. You win! Paper covers rock.");
+        resultsDiv.textContent = "CPU chose rock. You win! Paper covers rock.";
     } else if (computerSelection==="scissors" && playerSelection==="rock") {
         ++playerScore;
-        console.log ("CPU chose scissors. You win! Rock breaks scissors.");
+        resultsDiv.textContent = "CPU chose scissors. You win! Rock breaks scissors.";
     } else {
-        console.log ("You and the CPU chose the same. Tie!")
+        resultsDiv.textContent = "You and the CPU chose the same. Tie!"
     }
     console.log("You:"+" "+playerScore)
     console.log("Computer:"+" "+computerScore)
