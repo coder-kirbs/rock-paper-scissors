@@ -120,14 +120,6 @@ if (computerSelection==="paper" && playerSelection==="rock") {
 }*/
 
 
-/*function checkWinner() {
-    if (computerScore > playerScore) {
-        return ("Game over! You lose!")
-    } else {
-        return ("Game over! You win!")
-    }
-}*/
-
 function checkWinner() {
     if (computerScore===5) {
         console.log ("Game over! You lose!")
