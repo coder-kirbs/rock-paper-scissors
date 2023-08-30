@@ -58,8 +58,9 @@ scissorsBtn.addEventListener('click', function(e) {
     playRound();
 });
 
-const resultsDiv = document.createElement('h3');
-
+const resultsDiv = document.createElement('h5');
+const resultsHeading = document.querySelector('#resultsHeading')
+resultsHeading.append(resultsDiv);
 
 const yourScoreDOM = document.createElement('p');
 const yourScorePara = document.querySelector('#yourScorePara');
