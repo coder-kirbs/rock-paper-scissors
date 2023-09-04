@@ -75,27 +75,27 @@ function playRound() {
     if (computerSelection==="paper" && playerSelection==="rock") {
         ++computerScore;
         resultsDiv.textContent = "CPU chose paper. You lose. Paper covers rock.";
-        compScorePara.append(' '+computerScore);
+        compScorePara.textContent = "Computer score: " + computerScore;
     } else if (computerSelection==="rock" && playerSelection==="scissors") {
         ++computerScore;
         resultsDiv.textContent = "CPU chose rock. You lose. Rock breaks scissors.";
-        compScorePara.append(' '+computerScore);
+        compScorePara.textContent = "Computer score: " + computerScore;
     } else if (computerSelection==="scissors" && playerSelection==="paper") {
         ++computerScore;
         resultsDiv.textContent = "CPU chose scissors. You lose. Scissors cut paper.";
-        compScorePara.append(' '+computerScore);
+        compScorePara.textContent = "Computer score: " + computerScore;
     } else if (computerSelection==="paper" && playerSelection==="scissors") {
         ++playerScore;
         resultsDiv.textContent = "CPU chose paper. You win! Scissors cut paper.";
-        yourScorePara.append(' '+playerScore);
+        yourScorePara.textContent = "Your score: " + playerScore;
     } else if (computerSelection==="rock" && playerSelection==="paper") {
         ++playerScore;
         resultsDiv.textContent = "CPU chose rock. You win! Paper covers rock.";
-        yourScorePara.append(' '+playerScore);
+        yourScorePara.textContent = "Your score: " + playerScore;
     } else if (computerSelection==="scissors" && playerSelection==="rock") {
         ++playerScore;
         resultsDiv.textContent = "CPU chose scissors. You win! Rock breaks scissors.";
-        yourScorePara.append(' '+playerScore);
+        yourScorePara.textContent = "Your score: " + playerScore;
     } else {
         resultsDiv.textContent = "You and the CPU chose the same. Tie!"
     }
